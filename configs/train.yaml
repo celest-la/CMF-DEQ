@@ -1,0 +1,25 @@
+project: "ma_these_deq"
+run_name: "baseline"
+
+data:
+  path: "data/h5/dataset_freq123.h5"
+
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 1e-3
+
+model:
+  frecon: "radial"
+  X: null
+  Z: null
+  dncnn_depth: 17
+  params_algo:
+    tau: 0.1
+  trainable_params: ["tau"]
+  max_iter: 20
+
+wandb:
+  enabled: true
+
+save_path: "results"
