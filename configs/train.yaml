@@ -1,19 +1,20 @@
-project: "ma_these_deq"
+project: "CMF-DEQ"
 run_name: "baseline"
 
 data:
-  path: "data/h5/dataset_freq123.h5"
-
+  path: '/content/drive/MyDrive/Colab Notebooks/CsmPower5.h5'
+  num_workers: 1
 training:
   epochs: 50
-  batch_size: 16
-  learning_rate: 1e-3
+  training_batch_size: 32
+  valid_batch_size: 5
+  test_batch_size: 5
+  learning_rate: 1e-5
+  stepsize: [1.0]
+  sigma_denoiser: [0.3]
 
 model:
-  frecon: 4.2e6
-  dncnn_depth: 20
-  params_algo:
-    tau: 0.1
+  frequency: 4.2e6
   max_iter: 20
 
 wandb:
